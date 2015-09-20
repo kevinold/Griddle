@@ -39,7 +39,7 @@
     "webpack-dev-server": "~1.7.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --harmony"
   },
   "repository": {
     "type": "git",
