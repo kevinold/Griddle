@@ -8,3 +8,4 @@ install:
 script:
   - grunt build
   - npm test
+
