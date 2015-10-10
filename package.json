@@ -37,7 +37,8 @@
     "webpack-dev-server": "~1.7.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "deploy-ghpages": "./deploy-ghpages.sh"
   },
   "repository": {
     "type": "git",

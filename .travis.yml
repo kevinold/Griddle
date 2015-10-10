@@ -1,10 +1,16 @@
 language: node_js
 node_js:
   - '0.10'
+env:
+  global:
+    - GH_REF: github.com/kevinold/griddle.git
+    - secure: "XxKcCpHX3YOv8a17jlascHI4wdfLLxxtevlsA5HdetafjpKEhHVc66DVQmskZjTH+VFvAMhfrLHXJ6Qz5U8STge3kntxklfas3wpnBcPuSyr75BXthIQvSps7vteKkeEV3Dq3aUAn0apqjEDccHkkSnuHfESjPo2Gwcm4yKSd33bTJ89RUWxJc8ZMy2+j3Ejr9+D0v5uaYqAZtLhHI8unVqA3/4HcpK0ntV0JnO/UGTkOM01Kn9LD8cmfmm8yRhlSETAOGEBeoXj53wffW98uCQO6bq3IaIoGg4Ovl7kEQzdI0IyavdEa1NYfh4WEv7Koro/h9tGNouatHViJ7ZqGr/vnxpgqQOwePCzfO1VPym9F6vHsxS1qdfAjtntbTL0AHQWcjXCkOehsIZ4jXfjICDasSozJLKfRg0eFkWCtmzhSEmYAFQgEyAwNZlo9VoHCEWlWevADNGXImMzA5H4DQeb55TkS72v8Hu17RXHh1ezYno+SmE46333DiKKjYsHBVvqkZVJ14h7WQYZtGnhv+gKAF64ueOihJ1cGFmYzxv+YJxEmP09NygkWDr3n1IqCAqKqOjWmly4Zv7bZOQB0XkVlj5MkD98TQlk0EaqactC0ctsOvPa7yQC+0hMsYMqxtblj1XLJqxWQIoOis9QNF1rq/3qZ74c8iVdgs92t9c="
 before_install:
-  - 'npm install -g grunt-cli jest-cli'
+  - npm install -g grunt-cli jest-cli
 install:
-  - 'npm install'
+  - npm install
 script:
   - grunt build
   - jest
+after_success:
+  - npm run deploy-ghpages
